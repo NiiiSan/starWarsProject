@@ -1,0 +1,50 @@
+ng new nomduprojet
+
+npm imPlanets
+
+install NGX bootstrap method 2 (on a angular CLI)
+
+prendre un menu bootstrap
+
+faire les 3 liens 
+
+créer composants home
+		 menu
+	         vehicles
+	         planets
+
+faire le rooting
+{path:'', component: homecomponent}
+etc...
+
+sur les liens du menu
+routerLink='' routerLinkActive="active"
+etc...
+
+invoquer mes composants sur le home
+
+créer service de recencement des planets
+
+créer class pour les planets
+y faire la classe
+puis le constructeur (avec la possibilité de ne pas avoir d infos)
+
+créer un tab de planetes dans le service.ts
+
+faire une fonction getPlanets dans le service
+
+pour récup les infos des planetes dans le composant planet
+importer le planetservice
+init ngoninit
+
+récupérer un beau tableau bootstrap
+
+itérer le tableau et y afficher les infos
+boucle for ou ternaire
+
+dimensionner images
+
+
+
+
+

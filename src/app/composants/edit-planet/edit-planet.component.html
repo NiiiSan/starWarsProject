@@ -1,0 +1,40 @@
+<h2>Editer une planête</h2>
+
+<form *ngIf="planetForm" #formPlanet="ngForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label for="name">Nom de la planète</label>
+    <input type="text" class="form-control" id="name"  name="name" required [(ngModel)]="planetForm.name" #name="ngModel">
+    <div [hidden]="name.valid"
+         class="alert alert-danger">
+      Le nom de la planète est requis
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="hasOxygen">Il y a de l'oxygene ? </label>
+    <select class="form-control"  id="hasOxygen"
+            required
+            [(ngModel)]="planetForm.hasOxygen" name="hasOxygen" #hasOxygen="ngModel">
+      <option></option>
+      <option *ngFor="let yesNo of yesNoChoice" [value]="yesNo.value">{{ yesNo.text }}</option>
+    </select>
+    <div [hidden]="hasOxygen.valid"
+         class="alert alert-danger">
+      L'oxygene est elle présente ?
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="image">Image de la planète</label>
+    <input type="text" class="form-control" id="image"  name="image" required [(ngModel)]="planetForm.image"
+           #image="ngModel">
+    <div [hidden]="image.valid" class="alert alert-danger">
+      Veuillez entrer l'url de l'image
+    </div>
+  </div>
+
+  <input type="submit" [disabled]="!formPlanet.valid" >
+
+</form>
+

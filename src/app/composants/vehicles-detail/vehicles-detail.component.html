@@ -1,0 +1,22 @@
+<div *ngIf="isLoading == true" class="spinner-border" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+
+<table *ngIf="isLoading == false" class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Speed</th>
+      <th scope="col">Faster Than Light Activation ?</th>
+      <th scope="col">Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">{{ vehicle.name }}</td>
+      <td scope="row">{{ vehicle.speed }}</td>
+      <td scope="row">{{ vehicle.ftl ?'oui':'non' }}</td>
+      <td scope="row"><img src="{{ vehicle.image }}"></td>
+    </tr>
+  </tbody>
+</table>

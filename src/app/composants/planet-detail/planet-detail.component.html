@@ -1,0 +1,20 @@
+<div *ngIf="isLoading == true" class="spinner-border" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+
+<table *ngIf="isLoading == false" class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Has Oxygen?</th>
+      <th scope="col">Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">{{ planet.name }}</td>
+      <td scope="row">{{ planet.hasOxygen ?'oui':'non' }}</td>
+      <td scope="row"><img src="{{ planet.image }}"></td>
+    </tr>
+  </tbody>
+</table>

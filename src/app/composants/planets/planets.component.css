@@ -1,0 +1,25 @@
+
+.tableau{
+  width: 100%;
+  color: aliceblue;
+  border-radius: 10px;
+  background-image: url("../../../assets/img/walls/Zakuul.jpg");
+}
+.borderWhite{
+  border: 2px solid white;
+}
+.buttons{
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+img{
+  width: 200px;
+}
+
+img:hover{
+  transform: scale(1.05);
+}
+

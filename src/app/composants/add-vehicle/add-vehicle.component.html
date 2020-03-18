@@ -1,0 +1,49 @@
+<h2>Ajouter un véhicule</h2>
+
+<form #formAddVehicul="ngForm" (ngSubmit)="addVehicle()">
+
+  <div class="form-group">
+    <label for="name">Nom du vehicle</label>
+    <input type="text" class="form-control" id="name"  name="name" #name="ngModel" required
+          [(ngModel)]="vehicleToAdd.name">
+    <div [hidden]="name.valid"
+         class="alert alert-danger">
+      Le nom du véhicule est requis
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="speed">Vitesse de croisière</label>
+    <input type="number" class="form-control" id="speed"  name="speed" #speed="ngModel" required
+          [(ngModel)]="vehicleToAdd.speed">
+    <div [hidden]="speed.valid"
+         class="alert alert-danger">
+      La vitesse de croisière est requise
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="ftl">Est il Faster than the LIGHT?</label>
+    <select class="form-control"  id="flt" name="ftl" #ftl="ngModel" required
+            [(ngModel)]="vehicleToAdd.ftl">
+      <option></option>
+      <option *ngFor="let yesNo of yesNoChoice" [value]="yesNo.value">{{ yesNo.text }}</option>
+    </select>
+    <div [hidden]="ftl.valid"
+         class="alert alert-danger">
+      Réponds!
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="image">Image du starship</label>
+    <input type="text" class="form-control" id="image"  name="image"#image="ngModel" required
+            [(ngModel)]="vehicleToAdd.image">
+    <div [hidden]="image.valid" class="alert alert-danger">
+      Veuillez entrer l'url de l'image
+    </div>
+  </div>
+
+  <input type="submit" [disabled]="!formAddVehicul.valid">
+
+</form>

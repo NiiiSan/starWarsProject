@@ -1,0 +1,30 @@
+<div *ngIf="isLoading == true" class="spinner-border" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+
+<button [routerLink]="['/planet/add']" type="button" class="btn btn-success">Ajouter une planète</button>
+
+<table class="tableau" *ngIf="isLoading == false">
+  <thead>
+    <tr class="borderWhite text-center">
+      <th class="borderWhite text-center">#</th>
+      <th class="borderWhite text-center">Name</th>
+      <th class="borderWhite text-center">Has Oxygen?</th>
+      <th class="borderWhite text-center">Image</th>
+      <th class="borderWhite text-center">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="borderWhite text-center" *ngFor="let planet of planets">
+      <th class="borderWhite text-center">{{ planet.id }}</th>
+      <td class="borderWhite text-center">{{ planet.name }}</td>
+      <td class="borderWhite text-center">{{ planet.hasOxygen ?'oui':'non' }}</td>
+      <td class="borderWhite text-center"><a [routerLink]="['/planet/', planet.id]"><img src="{{ planet.image }}"></a></td>
+      <div class="buttons">
+        <td><button [routerLink]="['/planet/', planet.id]" type="button" class="btn btn-warning">Détail de {{ planet.name }}</button></td>
+        <td><button [routerLink]="['/planet/edit', planet.id]" type="button" class="btn btn-primary">Edit {{ planet.name }}</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="deletePlanet(planet)">Supprimer {{ planet.name }}</button></td>
+      </div>
+    </tr>
+  </tbody>
+</table>

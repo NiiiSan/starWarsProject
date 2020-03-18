@@ -1,0 +1,32 @@
+<div *ngIf="isLoading == true" class="spinner-border" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+<td><button [routerLink]="['/vehicle/add']" type="button" class="btn btn-success">Ajouter un vehicule</button></td>
+
+<table class="tableau" *ngIf="isLoading == false">
+  <thead>
+    <tr class="borderWhite text-center">
+      <th class="borderWhite text-center">#</th>
+      <th class="borderWhite text-center">Name</th>
+      <th class="borderWhite text-center">Speed</th>
+      <th class="borderWhite text-center">Faster Than Light Activation ?</th>
+      <th class="borderWhite text-center">Image</th>
+      <th class="borderWhite text-center">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="borderWhite text-center" *ngFor="let vehicle of vehicles">
+      <th class="borderWhite text-center">{{ vehicle.id }}</th>
+      <td class="borderWhite text-center">{{ vehicle.name }}</td>
+      <td class="borderWhite text-center">{{ vehicle.speed }}</td>
+      <td class="borderWhite text-center">{{ vehicle.ftl ?'oui':'non' }}</td>
+      <td class="borderWhite text-center"><a [routerLink]="['/vehicle/', vehicle.id]"><img src="{{ vehicle.image }}"></a></td>
+      <div class="buttons">
+        <td><button [routerLink]="['/vehicle/', vehicle.id]" type="button" class="btn btn-warning">Détail de {{ vehicle.name }}</button></td>
+        <td><button [routerLink]="['/vehicle/edit', vehicle.id]" type="button" class="btn btn-primary">Edit {{ vehicle.name }}</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="deleteVehicle()">Supprimer {{ vehicle.name }}</button></td>
+      </div>
+    </tr>
+  </tbody>
+</table>
+

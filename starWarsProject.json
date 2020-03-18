@@ -1,0 +1,46 @@
+{
+  "planets": [
+    {
+      "name": "Balmorra",
+      "hasOxygen": true,
+      "image": "assets/img/planets/Balmorra.png",
+      "id": 1
+    },
+    {
+      "name": "Coruscant",
+      "hasOxygen": false,
+      "image": "assets/img/planets/Coruscant.png",
+      "id": 2
+    },
+    {
+      "name": "Alderaan",
+      "hasOxygen": true,
+      "image": "assets/img/planets/Alderaan.png",
+      "id": 3
+    }
+  ],
+  "vehicles": [
+    {
+      "id": 1,
+      "name": "BT7-Thunderclap",
+      "speed": 125025,
+      "ftl": false,
+
+     "image": "assets/img/vehicles/BT7Thunderclap.png"
+    },
+    {
+      "id": 2,
+      "name": "D5-Mantis",
+      "speed": 145023,
+      "ftl": false,
+      "image": "assets/img/vehicles/D5Mantis.png"
+    },
+    {
+      "name": "Defender-Portal",
+      "speed": 256132,
+      "ftl": true,
+      "image": "assets/img/vehicles/DefenderPortal.png",
+      "id": 3
+    }
+  ]
+}
